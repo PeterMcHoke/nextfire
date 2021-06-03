@@ -3,11 +3,8 @@ import Link from 'next/link';
 import { useContext } from 'react';
 import { UserContext } from '../lib/context';
 
-interface Props {
-    
-}
 
-const AuthCheck = (props: Props) => {
+const AuthCheck = (props) => {
     const { username } = useContext(UserContext);
     return username ? 
         props.children :
@@ -19,4 +16,4 @@ const AuthCheck = (props: Props) => {
     )
 }
 
-export default AuthCheck
+export default AuthCheck;
