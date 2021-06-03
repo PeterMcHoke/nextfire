@@ -1,8 +1,8 @@
-import { getUserWithUsername, postToJSON } from '../../lib/firebase';
+import { auth, getUserWithUsername, postToJSON } from '../../lib/firebase';
 import UserProfile from '../../components/UserProfile';
 import Metatags from '../../components/Metatags';
 import PostFeed from '../../components/PostFeed';
-
+import { useRouter } from 'next/router';
 
 export async function getServerSideProps({ query }) {
   const { username } = query;
@@ -36,10 +36,17 @@ export async function getServerSideProps({ query }) {
 }
 
 export default function UserProfilePage({ user, posts }) {
+  const router = useRouter();
+
+  const signOut =  () => {
+    auth.signOut();
+    router.push('/');
+  }
   return (
     <main>
       <Metatags title={user.username} description={`${user.username}'s public profile`} />
       <UserProfile user={user} />
+      <button onClick={signOut} className='center'>Sign Out</button>
       <PostFeed posts={posts} />
     </main>
   );
