@@ -50,6 +50,10 @@ input {
   padding: 5px 10px;
 }
 
+.smaller-font {
+  font-size: 1rem;
+}
+
 fieldset {
   border: none;
   padding: 1rem 0;
@@ -264,4 +268,10 @@ input[type="file"] {
 
 .center {
   margin: 0 auto;
+  margin-top: 10px;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
 }

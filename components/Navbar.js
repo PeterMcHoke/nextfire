@@ -12,19 +12,17 @@ export default function Navbar() {
       <ul>
         <li>
           <Link href="/">
-            <button className="btn-logo">NXT</button>
+            <button className="btn-logo">DEV</button>
           </Link>
         </li>
 
         {/* user is signed-in and has username */}
         {username && (
           <>
-            <li>
+            <li className='navbar-right'>
               <Link href="/admin">
                 <button className="btn-blue">Write Posts</button>
               </Link>
-            </li>
-            <li>
               <Link href={`/${username}`}>
                 <img src={user?.photoURL || '/hacker.png'} />
               </Link>
