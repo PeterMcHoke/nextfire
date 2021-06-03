@@ -134,12 +134,6 @@ const UsernameForm = () => {
 const Enter = (props: Props) => {
     const {user, username} = useContext(UserContext)
     let router = useRouter();
-    //TODO:this might be causing issues
-    auth.onAuthStateChanged(user => {
-        if (user) {
-            router.push(`/`)
-        }
-    })
 
     return (
         <main>
