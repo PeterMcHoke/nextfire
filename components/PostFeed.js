@@ -1,11 +1,7 @@
 import Link from 'next/link';
 
-interface Props {
-    posts: any,
-    admin: boolean
-}
 
-export default function PostFeed({ posts, admin }:Props) {
+export default function PostFeed({ posts, admin = false }) {
   return posts ? posts.map((post) => <PostItem post={post} key={post.slug} admin={admin} />) : null;
 }
 
